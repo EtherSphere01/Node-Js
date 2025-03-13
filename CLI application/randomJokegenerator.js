@@ -15,6 +15,9 @@ function getNewjoke() {
         console.log(chalk.red(JSON.parse(data).punchline));
         console.log(chalk.blue("Thank you for using the joke generator!"));
       });
+      res.on("error", (err) => {
+        console.log("An error occurred");
+      });
     });
   };
   getJoke();
