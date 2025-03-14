@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Index</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="url-shortener">URL Shortener</h1>
+      <form class="shorten-form">
+        <div class="enter-url-div">
+          <label for="url" class="enter-url">Enter URL</label>
+          <input type="url" name="url" id="url" required />
+        </div>
+        <div class="enter-shortCode-div">
+          <label for="shortCode" class="enter-shortCode"
+            >Enter shortCode:</label
+          >
+          <input type="text" name="shortCode" id="shortCode" required />
+        </div>
+        <button type="submit" class="submit">Shorten</button>
+      </form>
+      <h2 class="result">Shortened URLs</h2>
+      <ul id="shortened-urls"></ul>
+    </div>
+    <script>
+      document
+        .getElementsByClassName("shorten-form")[0]
+        .addEventListener("submit", (event) => {
+          event.preventDefault();
+          const formData = new FormData(event.target);
+          const url = formData.get("url");
+          const shortCode = formData.get("shortCode");
+
+          
+        });
+    </script>
+  </body>
+</html>

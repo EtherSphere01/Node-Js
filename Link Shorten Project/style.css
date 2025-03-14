@@ -1,0 +1,135 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: #c8d0d8;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 40%;
+  background-color: #848688;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 50px 250px 50px;
+  grid-template-areas:
+    "url-shorter"
+    "form"
+    "output-url";
+  border-radius: 10px 10px 10px 10px;
+  padding: 20px;
+  background-color: rgb(113, 231, 231);
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.url-shortener {
+  grid-area: url-shorter;
+  font-size: 1.5rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.shorten-form {
+  grid-area: form;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px 100px 50px;
+  grid-template-areas:
+    "enter-url-div"
+    "enter-shortcode-div"
+    "submit-button";
+}
+
+.enter-url-div {
+  grid-area: enter-url-div;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 40% 60%;
+  grid-template-areas:
+    "enter-url"
+    "input-url";
+}
+
+.enter-shortCode-div {
+  grid-area: enter-shortcode-div;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 40% 60%;
+  grid-template-areas:
+    "enter-shortcode"
+    "input-shortcode";
+}
+
+.enter-url {
+  grid-area: enter-url;
+  font-size: 1.2rem;
+  justify-self: left;
+  align-self: btottom;
+  padding-top: 4%;
+}
+
+#url {
+  grid-area: input-url;
+  justify-self: left;
+  align-self: center;
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px 10px 10px 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.enter-shortCode {
+  grid-area: enter-shortcode;
+  font-size: 1.2rem;
+  justify-self: left;
+  align-self: btottom;
+  padding-top: 4%;
+}
+
+#shortCode {
+  grid-area: input-shortcode;
+  justify-self: left;
+  align-self: center;
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px 10px 10px 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.submit {
+  grid-area: submit-button;
+  justify-self: center;
+  align-self: center;
+  background-color: #7794f3;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.result {
+  grid-area: output-url;
+  justify-self: center;
+  align-self: center;
+  font-size: 1.2rem;
+  color: rgb(72, 75, 62);
+  word-wrap: break-word;
+  text-align: center;
+}
