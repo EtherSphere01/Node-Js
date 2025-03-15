@@ -36,7 +36,7 @@ const server = createServer(async (req, res) => {
 
     if (req.url === "/") {
       filePath = path.resolve(__dirname, "index.html");
-    } else {
+    } else if (req.url === "/style.css") {
       filePath = path.resolve(__dirname, "." + req.url);
       const ext = path.extname(filePath);
 
@@ -52,6 +52,9 @@ const server = createServer(async (req, res) => {
         ".json": "application/json",
       };
       contentType = mimeTypes[ext] || "text/plain";
+    } else if (req.url === "/links") {
+      const links = await loadLinks();
+      return res.end(JSON.stringify(links));
     }
 
     try {
