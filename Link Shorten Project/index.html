@@ -9,7 +9,7 @@
   <body>
     <div class="container">
       <h1 class="url-shortener">URL Shortener</h1>
-      <form class="shorten-form">
+      <form class="shorten-form" method="post">
         <div class="enter-url-div">
           <label for="url" class="enter-url">Enter URL</label>
           <input type="url" name="url" id="url" required />
@@ -28,13 +28,23 @@
     <script>
       document
         .getElementsByClassName("shorten-form")[0]
-        .addEventListener("submit", (event) => {
+        .addEventListener("submit", async (event) => {
           event.preventDefault();
           const formData = new FormData(event.target);
           const url = formData.get("url");
           const shortCode = formData.get("shortCode");
-
-          
+          console.log(url, shortCode);
+          try {
+            const resp = await fetch("/submit", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ url, shortCode }),
+            });
+          } catch (err) {
+            console.error(err);
+          }
         });
     </script>
   </body>
