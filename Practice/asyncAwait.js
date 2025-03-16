@@ -48,7 +48,7 @@ function first(n) {
       }
       console.log(s);
       resolve(s);
-    }, 5000);
+    }, 2000);
   });
 }
 
@@ -59,3 +59,4 @@ async function call() {
   await first(200);
 }
 call();
+

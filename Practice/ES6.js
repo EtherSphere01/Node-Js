@@ -345,3 +345,108 @@ console.log(Number.isInteger(num));
 // output will be false
 console.log(Number.isSafeInteger(num));
 // output will be true
+
+// promise, async, await
+// console.log("promise, async, await");
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("Success");
+//   }, 3000);
+// });
+
+// promise chain; if one promise is resolved then the next promise will be called
+// if one promise is rejected then the catch block will be called
+// promise
+//   .then((result) => {
+//     console.log(result);
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve("Second Success");
+//       }, 3000);
+//     });
+//   })
+//   .then((result) => {
+//     console.log(result);
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve("Third Success");
+//       }, 3000);
+//     });
+//   })
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+// if time is equal to previous time then which one called first will be output first
+
+// async await
+// const fun1 = async () => {
+//   const result = await promise;
+//   console.log(result);
+//   const result1 = await new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("Second Success");
+//     }, 3000);
+//   });
+//   console.log(result1);
+//   const result2 = await new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("Third Success");
+//     }, 3000);
+//   });
+//   console.log(result2);
+// };
+// fun1();
+
+function getdata(data) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log(data);
+      resolve("Success");
+    }, 2000);
+  });
+}
+
+async function getalldatat() {
+  await getdata("first");
+  await getdata("second");
+  await getdata("third");
+}
+getalldatat();
+
+// Modules concepts
+// Exports & defaults
+import { plus, minus, multiply, divide } from "./math.js";
+// import Modules from "./math.js";
+console.log(plus(200, 200));
+// console.log(sub(20, 10));
+
+// import * as math from "./math.js";
+// console.log(math.plus(10, 20));
+// console.log(math.minus(20, 10));
+
+// import add5 from "./math.js";
+// console.log(add5(10, 20));
+
+// const plus = (a, b) => a + b;
+// const minus = (a, b) => a - b;
+// const multiply = (a, b) => a * b;
+// const divide = (a, b) => a / b;
+// export { plus, minus, multiply, divide };
+
+// var Modules = {
+//   plus,
+//   minus,
+//   multiply,
+//   divide,
+// };
+// export default Modules;
+
+// promise stage - 3 types;
+// 1-> panding
+// 2-> resolve/fulfilled
+// 3-> reject
+// promise is a object that may produce a single value some time in the future
+// either a resolved value or a reason that it's not resolved(rejected)
