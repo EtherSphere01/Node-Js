@@ -174,3 +174,174 @@ setTimeout(() => {
 }, 3000);
 console.log("end");
 // output will be start, end, inside setTimeout
+
+// Class & Objects
+console.log("Class & Objects");
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  fun() {
+    console.log(`My name is ${this.name} and age is ${this.age}`);
+  }
+}
+const person = new Person("John", 30);
+person.fun();
+
+// Array methods(filter, slice, find, concat, push, join, map)
+console.log("Array methods(filter, slice, find, concat, push, join, map)");
+const arr5 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// filter
+console.log("filter");
+const filterArr = arr5.filter((value) => value > 5);
+console.log(filterArr);
+// output will be [6, 7, 8, 9, 10]
+
+// slice
+console.log("slice");
+const sliceArr = arr5.slice(2, 5);
+console.log(sliceArr);
+// output will be [3, 4, 5]
+
+// find
+console.log("find");
+const findArr = arr5.find((value) => value === 5);
+console.log(findArr);
+// output will be 5. Print the value is available in the array or print undefined if the value is not available
+
+// concat
+console.log("concat");
+const arr6 = [11, 12, 13, 14, 15];
+const concatArr = arr5.concat(arr6);
+console.log(concatArr);
+// output will be [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+console.log(arr5);
+// output will be [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log(arr6);
+// output will be [11, 12, 13, 14, 15]
+
+// push
+console.log("push");
+arr5.push(11);
+console.log(arr5);
+// output will be [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+// join
+console.log("join");
+console.log(arr5.join(" "));
+// output will be 1 2 3 4 5 6 7 8 9 10 11
+
+// map
+console.log("map");
+const mapArr = arr5.map((value) => value * 2);
+console.log(mapArr);
+// output will be [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22]
+
+// array (methods - map, filter, reducer)
+console.log("array (methods - map, filter, reducer)");
+const arr7 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// map
+console.log("map");
+const mapArr1 = arr7.map((value) => value * 2);
+console.log(mapArr1);
+// output will be [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+// filter
+console.log("filter");
+const filterArr1 = arr7.filter((value) => value > 5);
+console.log(filterArr1);
+// output will be [6, 7, 8, 9, 10]
+
+// reducer
+console.log("reducer");
+const reducerArr = arr7.reduce((acc, value) => acc + value, 0);
+// 0 is the initial value of acc
+console.log(reducerArr);
+// output will be 55
+
+// Template literal
+console.log("Template literal");
+const name1 = "John";
+const age1 = 30;
+console.log(`My name is ${name1} and age is ${age1}`);
+
+// call back function
+console.log("call back function");
+const add4 = (a, b, callback) => {
+  callback(a + b);
+};
+add4(10, 20, (result) => {
+  console.log(result);
+});
+
+// Strings & numbers
+console.log("Strings & numbers");
+const str = "Hello World";
+console.log(str.length);
+// output will be 11
+console.log(str.toLowerCase());
+// output will be hello world
+console.log(str.toUpperCase());
+// output will be HELLO WORLD
+console.log(str.charAt(0));
+// output will be H
+console.log(str.indexOf("o"));
+// output will be 4
+console.log(str.lastIndexOf("o"));
+// output will be 7
+console.log(str.includes("World"));
+// output will be true
+console.log(str.startsWith("Hello"));
+// output will be true
+console.log(str.endsWith("World"));
+// output will be true
+console.log(str.split(" "));
+// output will be ["Hello", "World"]
+console.log(str.split(""));
+// output will be ["H", "e", "l", "l", "o", " ", "W", "o", "r", "l", "d"]
+console.log(str.slice(0, 5));
+// output will be Hello
+console.log(str.substring(0, 5));
+// output will be Hello
+console.log(str.substr(0, 5));
+// output will be Hello
+console.log(str.replace("World", "Bangladesh"));
+// output will be Hello Bangladesh
+console.log(str.concat(" Bangladesh"));
+// output will be Hello World Bangladesh
+console.log(str.trim());
+// output will be Hello World
+// trim() method removes whitespace from both sides of a string
+console.log(str.repeat(3));
+// output will be Hello WorldHello WorldHello World
+console.log(str.padStart(20, "a"));
+// output will be aaaaaaaaaHello World
+console.log(str.padEnd(20, "a"));
+// output will be Hello Worldaaaaaaaaa
+
+const num = 10.123456789;
+console.log(num.toFixed(2));
+// output will be 10.12
+console.log(num.toPrecision(2));
+// output will be 10
+console.log(num.toString());
+// output will be 10.123456789
+console.log(num.toString(2));
+// output will be 1010.000111000010100100110111100101111000110101001111
+console.log(num);
+// output will be 10.123456789
+console.log(num.toString(8));
+// output will be 12.076547624
+console.log(parseInt(num));
+// output will be 10
+console.log(parseFloat(num));
+// output will be 10.123456789
+console.log(isNaN(num));
+// output will be false
+console.log(isFinite(num));
+// output will be true
+console.log(Number.isInteger(num));
+// output will be false
+console.log(Number.isSafeInteger(num));
+// output will be true
